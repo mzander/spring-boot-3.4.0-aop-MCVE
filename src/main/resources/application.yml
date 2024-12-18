@@ -1,0 +1,30 @@
+server:
+  error:
+    include-message: never
+    include-binding-errors: never
+
+spring:
+  application:
+    name: spring-aop-collision
+
+logging:
+  level:
+    de.addmoremobile.pushservice.api: DEBUG
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    org.springframework.cache: WARN
+    web.filter.CommonsRequestLoggingFilter: WARN
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+      base-path: /actuator
+      path-mapping:
+        prometheus: prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+    servlet:
+      context-path: /
