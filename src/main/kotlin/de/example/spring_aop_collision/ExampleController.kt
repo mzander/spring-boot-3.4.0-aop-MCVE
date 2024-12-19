@@ -1,6 +1,6 @@
 package de.example.spring_aop_collision
 
-import io.micrometer.core.annotation.Counted
+import de.example.spring_aop_collision.customaspect.OnError
 import io.micrometer.core.annotation.Timed
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 class ExampleController {
 
     @GetMapping
-    @Counted
+    @OnError
     fun index() {
 
     }

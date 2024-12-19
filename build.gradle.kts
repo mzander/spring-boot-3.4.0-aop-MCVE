@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.25"
     id("org.springframework.boot") version "3.4.0"
     id("io.spring.dependency-management") version "1.1.6"
+    id("io.freefair.aspectj.post-compile-weaving") version "8.11"
 }
 
 group = "de.example"
@@ -26,6 +27,7 @@ dependencies {
     implementation("io.micrometer:micrometer-registry-prometheus:1.14.2")
     implementation("org.aspectj:aspectjrt:1.9.22.1")
     implementation("org.aspectj:aspectjweaver:1.9.22.1")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
